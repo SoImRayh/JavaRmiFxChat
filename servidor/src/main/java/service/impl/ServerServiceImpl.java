@@ -8,12 +8,5 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServerServiceImpl implements ServerService {
-    @Override
-    public void addObserverAndNotify(RemoteObserver observer) {
-        List<Observer> observers = new ArrayList<>();
-
-        //observers.add(observer);
-
-        //observer.update("evento disparado");
-    }
+    
 }

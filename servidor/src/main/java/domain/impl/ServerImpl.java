@@ -20,21 +20,27 @@ public class ServerImpl extends UnicastRemoteObject implements Server {
 
     private final ServerService service = new ServerServiceImpl();
 
+    private List<Chat> chats = new ArrayList<>();
+
     public ServerImpl() throws RemoteException {
         super();
     }
 
     @Override
-    public Auth requestAuth(AuthDto dto) throws RemoteException {
-        if (Objects.isNull(dto))
-            throw new RemoteException("dto is null");
-        return new Auth( dto.getUser() , LocalDateTime.now().plusSeconds(60).toLocalDate());
-    }
-
+    Auth requestAuth(AuthDto dto) throws RemoteException {
+        return service.doLoginUsingRemoteServer(AuthDto);
+    };
+    
     @Override
-    public void addObserverAndNotify(RemoteObserver observer) throws RemoteException {
-        service.addObserverAndNotify(observer);
-    }
+    List<Chat> getChats() throws RemoteException {
+        return chats;
+    };
+    
+    @Override
+    boolean sendMessage() throws RemoteException;
+    
+    @Override
+    boolean quitChat() throws RemoteException;
 
 
 }
