@@ -17,7 +17,6 @@
   <modules>
     <module>core</module>
     <module>servidor</module>
-    <module>cliente</module>
   </modules>
   <dependencies>
     <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
