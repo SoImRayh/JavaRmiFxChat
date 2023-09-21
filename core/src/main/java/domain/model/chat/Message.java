@@ -1,12 +1,17 @@
 package domain.model.chat;
 
 import domain.model.User;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Message {
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Message implements Serializable {
+    private String user;
     private String text;
-    private LocalDate createAt;
-    private User owner;
 }
