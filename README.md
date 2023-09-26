@@ -24,7 +24,7 @@ Utilizando [Apache Maven](https://maven.apache.org) é possivel criar um projeto
 			    - domain:
 				   - utils:
 				    - ClientObserver.java
-	core:
+    core:
 		src:
 			java.dev.rayh:
 				domain:
