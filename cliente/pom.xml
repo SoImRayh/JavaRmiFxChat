@@ -32,6 +32,12 @@
         <artifactId>servidor</artifactId>
         <version>0.1</version>
       </dependency>
+        <dependency>
+            <groupId>dev.rayh</groupId>
+            <artifactId>core</artifactId>
+            <version>0.1</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 
