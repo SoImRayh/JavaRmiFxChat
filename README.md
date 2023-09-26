@@ -8,12 +8,14 @@ O intuito é construir aplicações que usem de uma biblioteca do java chamada j
 ## Desenvolvimento
 
 ![Imagem de carregamento](misc/arquitetura.png)
+
+
 Nosso objetivo é transformar esse diagrama em código, mão na massa.
 
 Usando a seguinte hierarquia de modulos:
 Utilizando [Apache Maven](https://maven.apache.org) é possivel criar um projeto java composto por vários sub projetos (modules) e para esse projeto foi o que foi ultilizado.
 
-```yml
+```
     cliente:
 	    src:
 		    java.dev.rayh:
