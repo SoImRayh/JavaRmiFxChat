@@ -48,9 +48,9 @@ Devemos criar uma interface para poder definir o comportamento nas duass  aplica
 Um ponto importante a ser levantado é que todo objeto que deve ser exposto para a referencia remota deve sempre extender de _java.rmi.Remote_ e seus metodos devem lançar uma exceção _java.rmi.RemoteException_ do demais a implementação é normal a de qualquer outra interface usando java.
 
 ```java
-public interface Server extends Remote throws RemoteException {
+public interface Server extends Remote  {
   void join (RemoteObserver remoteObserver, Message message) throws RemoteException ;
-  void sendMessage(Message, message) throws RemoteException;
+  void sendMessage(Message message) throws RemoteException;
 }
 ```
 
@@ -62,21 +62,27 @@ A implementação é como qualquer outra implementação de interfaces java, o q
 
 ```java
 @Data
-public class ServerImpl extends UnicastRemoteOlbject implements Server throws RemoteException {
+public class ServerImpl extends UnicastRemoteOlbject implements Server {
 
-private Chat chat;
+    private Chat chat;
 
-public ServerImpl(){
-  super()
-  chat = new Chat()
+    public ServerImpl() {
+        super();
+        chat = new Chat();
+    }
+
+    void join(RemoteObserver remoteObserver, Message message) throws RemoteException {
+        //implementação
+    }
+
+    ;
+
+    void sendMessage(Message message) throws RemoteException {
+        //implementação
+    }
+
+    ;
 }
-
-void join (RemoteObserver remoteObserver, Message message) throws RemoteException {
-	//implementação
-};
-void sendMessage(Message, message) throws RemoteException {
-	//implementação
-};
 
 ```
 
@@ -133,9 +139,10 @@ Registry registry = LocateRegistry.createRegistry(null);
 O código completo do servidor se resume a:
 
 ```java
-public static void main(String[] args) {
+public class Servidor {
+    public static void main(String[] args) {
         try {
-			Server server = new ServerImpl();
+            Server server = new ServerImpl();
             //criando um registry na porta especificada
             Registry registry = LocateRegistry.createRegistry(8080);
             //Associando o objeto a um nome no registry local
@@ -147,6 +154,7 @@ public static void main(String[] args) {
             throw new RuntimeException(e);
         }
     }
+}
 ```
 
 ## Programa Cliente
