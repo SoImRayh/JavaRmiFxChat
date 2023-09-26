@@ -25,11 +25,11 @@ Utilizando [Apache Maven](https://maven.apache.org) é possivel criar um projeto
 				   - utils:
 				    - ClientObserver.java
     core:
-		src:
+	    src:
 			java.dev.rayh:
 				domain:
-					- Server.java
-					- Chat.java
+				    - Server.java
+				    - Chat.java
 					- Message.java
 			utils:
 				- Observer.java
@@ -37,9 +37,9 @@ Utilizando [Apache Maven](https://maven.apache.org) é possivel criar um projeto
 	servidor:
 		src:
 			java.dev.rayh:
-				- domain:
-					- impl:
-						- ServerImpl.java
+			    - domain:
+				    - impl:
+					    - ServerImpl.java
 				- Main.java -> main()
 ```
 ### Server.java
