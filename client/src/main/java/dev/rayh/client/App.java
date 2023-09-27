@@ -34,7 +34,7 @@ public class App
         ConsolePrinter.INFO("cliente", "Entrando no chat...");
 
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost", 8081);
+            Registry registry = LocateRegistry.getRegistry( 8081);
             Server server = (Server) Naming.lookup("rmi://localhost:8081/server");
 
             RemoteObserver observer = new ClientObserver(message.getUser());
