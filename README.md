@@ -7,7 +7,7 @@ O intuito é construir aplicações que usem de uma biblioteca do java chamada j
 
 ## Desenvolvimento
 
-![Imagem de carregamento](misc/arquitetura.png)
+![Imagem de carregamento](media/misc/arquitetura.png)
 
 
 Nosso objetivo é transformar esse diagrama em código, mão na massa.
