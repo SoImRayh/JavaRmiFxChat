@@ -125,6 +125,11 @@ O objeto RemoteObserver é uma interface criada, contudo ele também é um objet
 Essa classe vai apenas subir um registry (stub) que vai guardar as referencias remotas quando objeto for exposto para invocações remotas.
 Uma coisa importante é na criação registry  deve-se passar a porta que quer associar no contrutor ou passar _null_ para associar a porta padrão 1099
 
+![registry.png](media/misc/registry.jpg)
+
+Ilustração de como é o funcionamento do registry, em que objetos podem ser expostos e em
+paralelo podem ser feitas invocações remotas para com esses objetos.
+
 ```java
 Registry registry = LocateRegistry.createRegistry(8080);
 // ou
@@ -214,7 +219,7 @@ public class Cliente {
 			Message msg = new Message();
 			
 			//pedindo para o usuário inserir o nome dele
-			System.out.println("insira o seu nome de usuário")
+			System.out.println("insira o seu nome de usuário");
 			msg.setUser(scanner.nextLine());
 			
 			server.join(observer, msg);
@@ -233,6 +238,16 @@ public class Cliente {
 	}
 }
 ```
+
+## Apresentações finais e resultados:
+
+![](media/misc/programas.png)
+
+A imagem mostra a execução de um programa servidor e 3 programas clientes que simulam usuários do chat,
+assim cada instância pode iteragir com as demais, e o mais legal, eles estão interagindo de literalmente o mesmo 
+objeto _chat_, não se tem um objeto _chat_ em cada aplicação cliente que é atualizada periodicamente e sim assim que o objeto base
+é alterado os clientes são notificados dessa alteração do estado e refletem as alterações.
+
 
 
 
